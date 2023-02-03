@@ -2,6 +2,29 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css');
 
 
-.fa-solid {
+i {
+    font-size: 150px;
+}
+
+.big font {
     font-size: 50px;
+}
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
+.gray {
+    color: gray;
+}
+
+.fa-heart-crack {
+    font-size: 25px;
+}
+
+#mug {
+    font-size: 220px;
 }

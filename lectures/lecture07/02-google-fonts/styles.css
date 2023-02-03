@@ -1,1 +1,8 @@
 /* Your style rules here */
+/* @import url('https://fonts.googleapis.com/css2?family=Solitreo&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Flow+Circular&display=swap');
+
+h1,h2,li,a {
+    font-family: 'Flow Circular', cursive;
+}

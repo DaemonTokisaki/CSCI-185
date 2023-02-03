@@ -40,12 +40,18 @@ div {
    text-decoration: none;
    padding: 5px 10px;
    display: inline-block;
+   transition: background-color 1s ease-out;
+   width: 100px;
+   height: 100px;
 }
 
 #demo1 a:hover,
 #demo1 a:focus {
    color: #333;
    background-color: #fff;
+   margin-left: 100px;
+   width: 50px;
+   height: 50px;
 }
 
 
@@ -61,7 +67,9 @@ div {
     padding: 5px 10px;
     font-family: Arial;
     display: inline-block;
-    transition: all 0.3s ease-out;
+    /* transition: all 0.3s ease-out; */
+    /* transform: rotate(90deg); */
+    /* skew(5px,5px); */
 }
  
 #demo2 a:hover,
@@ -71,6 +79,7 @@ div {
     padding: 5px 20px;
     transform: rotate(-10deg);
     font-size: 1.3em;
+    transform: rotate(180deg);
 }
 
 
