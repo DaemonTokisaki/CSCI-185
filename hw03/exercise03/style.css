@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Flow+Circular&display=swap');
+html {
+    scroll-behavior: smooth;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+h1{
+    font-size: 1.1em;
+line-height: 1.6em;
+/* font-family: 'Flow Circular', sans-serif; */
+}
+
+/* create additional rules below:  */
+
+h1 {
+    font-family:'Flow Circular', cursive;
+}
+
+h2 {
+    font-family: 'Modak', Arial;
+    font-weight: 500;
+}
+
+
+
+p {
+    font-family: 'Luckiest Guy', cursive;
+}
