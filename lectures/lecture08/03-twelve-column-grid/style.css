@@ -24,17 +24,51 @@ body {
   border: 4px solid tomato;
   border-radius: 6px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Keep for referance */
+
+/* .height-50 {
   height: 50vh;
 }
 
-
-/* Task 2 */
-
-.task-2.container {
+.height-20 {
+  height: 20vh;
 }
 
+.bg-purple {
+  background-color: blueviolet;
+}
+
+.bg-red {
+  background-color: red;
+} */
+/* Task 2 */
+
+.container-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  min-height: 100vh;
+  column-gap: 10px;
+  padding-top:125px;
+  padding-bottom:125px;
+}
+
+
+
 .item-1 {
+
+grid-column: 1/6 ;
 }
 
 .item-2 {
+  grid-column: 6/12;
+}
+
+@media screen and (max-width: 450px) {
+
+  .container-grid {
+    display: block;
+  }
 }
