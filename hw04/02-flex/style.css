@@ -1,0 +1,62 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+h2{
+    padding-top: 40vh;
+    display: flex;
+    justify-content:center ;
+}
+ p {
+    padding-bottom: 40vh;
+    display: flex;
+    justify-content:center ;
+}
+
+#bio h2, #bio p {
+    color: white;
+}
+
+#portfolio h2, #portfolio p {
+    color: white;
+}
+
+#contact h2, #contact p {
+    color: white;
+}
+
+section {
+    display: grid;
+}
+
+#home {
+    background-color: rgb(127, 193, 255);
+    height: 100vh;
+    
+}
+
+#bio {
+    background-color: rgb(67, 65, 175);
+    height: 100vh;
+}
+
+#portfolio {
+background-color: rgb(9, 9, 189);
+height: 100vh;
+}
+
+#contact {
+    background-color: rgb(9, 9, 71);
+    height: 100vh;
+}
+
+/* create additional rules below:  */

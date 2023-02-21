@@ -1,0 +1,47 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+/* nav{
+display: flex;
+flex-direction: row;
+
+} */
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: rgb(226, 226, 74);
+}
+
+ul{
+    display: flex;
+    justify-content:flex center;
+    column-gap: 20px;
+    list-style-type: none;
+    padding: 10px;
+ }
+
+/* nav 
+ {
+    height: 20vh;
+    width: 100vh;
+ } */
+#bio, #portfolio, #contact {
+    display:flex;
+    justify-content: flex-end;
+}
+
+#bio {
+    
+}
