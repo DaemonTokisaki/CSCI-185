@@ -40,7 +40,7 @@ h2, main {
 header {
 
     font-family: Oswald;
-    background-color: black;
+    /* background-color: black; */
     padding-bottom: 20px;
     color: white;
     height: 100vh;
@@ -54,7 +54,7 @@ header {
     background-size: cover;
     background-position-x: center;
     background-position-y: center;
-    
+
 }
 footer{
     
