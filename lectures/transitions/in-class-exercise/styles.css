@@ -24,7 +24,7 @@ body {
     background: #CCC;
 }
 
-/*
+
 #section1 {
     background: #0c7474;
     color: white;
@@ -36,12 +36,24 @@ body {
     width: 220px;
     height: 220px;
 }
-*/
 
 
-/* 
-#section2 { }
-#section2:hover { } 
-#section3 { }
-#section3:hover { } 
-*/
+
+
+#section2 { 
+    background:rgb(20, 73, 170);
+    color: white;
+    transition: all 10s ease-out;
+}
+#section2:hover { 
+    transform: skewY(20000deg);
+}
+
+#section3 {
+    background: #740c0c;
+    color: white;
+    transition: all 10s ease-out;
+ }
+#section3:hover { 
+    transform: skewY(20000deg);
+} 

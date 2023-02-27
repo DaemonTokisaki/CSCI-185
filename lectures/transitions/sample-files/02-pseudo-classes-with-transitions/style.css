@@ -99,11 +99,18 @@ div {
 #demo4 div {
     background: purple;
     color: white;
-    transition: all 1s ease-out;
+    transition: all 1000s ease-out;
 }
+
 #demo4 div:hover {
     background: blue;
     opacity: 0.5;
+    transform: skewY(10000deg);
+
+    /* transform: scale(2, 3); */
+    /* transform: translate(50px, 100px); */
+    /* margin-left: 100px;
+    margin-top: 50px; */
 }
 
 
