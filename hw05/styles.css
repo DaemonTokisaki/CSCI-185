@@ -13,7 +13,7 @@ body {
 }
 
 nav ul {
-    color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     margin: 1px;
     display: flex;
@@ -23,15 +23,18 @@ nav ul {
 
 }
 
-
+h4{
+    display: flex;
+    justify-content: center;
+}
 
 li {
     padding: 10px;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 body {
-    background-color: darkgreen;
+    background-color: rgb(255, 255, 255);
 }
 
 
@@ -42,7 +45,7 @@ header {
     grid-template-rows: 100% 45% 45%; */
     /* display: grid;*/
 
-    background-color: rgb(160, 12, 12);
+    background-color:rgb(211, 204, 204);
 
     color: rgba(0, 0, 0, 0.781);
     /* padding: 25px 13vw; */
@@ -151,11 +154,11 @@ p {
 
     /* column-gap: 10px;
     row-gap: 10px; */
-    background-color: blueviolet;
+    background-color: lightpink;
 }
 
 form {
-    background-color: brown;
+    background-color: lightpink;
 }
 
 /* #input{

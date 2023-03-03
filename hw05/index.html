@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <!-- don't forget to add the lang attribute! -->
+<html lang="en"></html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -19,8 +20,9 @@
             </ul>
         </nav>
         <div>
-            <img id="profile-pic" src="images/profile.jpg" />
-            <!-- <h4>*Profile Picture of Author</h4> -->
+            <img id="profile-pic" src="images/profile.jpg" img alt="Profile Picture of Author" />
+   
+            
             <h1>Welcome to my portfolio website</h1>
         </div>
     </header>
@@ -39,22 +41,22 @@
         <h2>Projects</h2>
         <div class="project-holder">
             <section class="card">
-                <img src="https://picsum.photos/id/1061/300/200" alt="image description 1" />
+                <img src="https://picsum.photos/id/1061/300/200" alt="*image of beach" />
                 <h3>Name of Project</h3>
                 <p>Ipsum lorem dolor aliquam ante commodo magna sed accumsan.</p>
             </section>
             <section class="card">
-                <img src="https://picsum.photos/id/1015/300/200" alt="image description 2" />
+                <img src="https://picsum.photos/id/1015/300/200" alt="*image of watervalley " />
                 <h3>Name of Project</h3>
                 <p>Ipsum lorem dolor aliquam ante commodo magna sed accumsan.</p>
             </section>
             <section class="card">
-                <img src="https://picsum.photos/id/572/300/200" alt="image description 3" />
+                <img src="https://picsum.photos/id/572/300/200" alt="*image of mountains" />
                 <h3>Name of Project</h3>
                 <p>Ipsum lorem dolor aliquam ante commodo magna sed accumsan.</p>
             </section>
             <section class="card">
-                <img src="https://picsum.photos/id/573/300/200" alt="image description 4" />
+                <img src="https://picsum.photos/id/573/300/200" alt="*image of waterfall" />
                 <h3>Name of Project</h3>
                 <p>Ipsum lorem dolor aliquam ante commodo magna sed accumsan.</p>
             </section>
@@ -66,14 +68,16 @@
         <div class="contact-details">
             <form method="post" action="#">
                 <div class="row row1">
-                    <input type="text" name="name" id="name" placeholder="Name"/>
-                    <input type="email" name="email" id="email" placeholder="Email" />
+                    <input type="text" name="name" id="name" placeholder="Name" aria-label="Put Name Here"/>
+                    <input type="email" name="email" id="email" placeholder="Email" aria-label="Put Email Here" />
                 </div>
                 <div class="row2">
-                    <textarea name="message" id="message" placeholder="Message" rows="4"></textarea>
+                    
+                    <textarea name="message" id="message" placeholder="Message" rows="4" aria-label="Put Message Here" ></textarea>
+                    
                 </div>
                 <div class="row3">
-                    <input id="submit" type="submit" value="Send Message">
+                    <input id="submit" type="submit" value="Send Message" >
                 </div>
             </form>
             <section id="contact-info">
