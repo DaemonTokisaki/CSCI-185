@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- don't forget to add the lang attribute! -->
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,13 +13,14 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#">About Me</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
         <div>
-            <img id="profile-pic" src="images/profile.jpg" alt="Photo of a handsome German Shephard Puppy smiling"/>
+            <img id="profile-pic" src="images/profile.jpg" />
+            <!-- <h4>*Profile Picture of Author</h4> -->
             <h1>Welcome to my portfolio website</h1>
         </div>
     </header>
@@ -68,10 +69,10 @@
                     <input type="text" name="name" id="name" placeholder="Name"/>
                     <input type="email" name="email" id="email" placeholder="Email" />
                 </div>
-                <div class="row">
+                <div class="row2">
                     <textarea name="message" id="message" placeholder="Message" rows="4"></textarea>
                 </div>
-                <div class="row">
+                <div class="row3">
                     <input id="submit" type="submit" value="Send Message">
                 </div>
             </form>
@@ -100,7 +101,7 @@
         </div>
     </section>
     <footer>
-        <p>Copyright {{your name}}, 2022.</p>
+        <p>Copyright {Tristan Agbayani}, 2022.</p>
     </footer>
 
 </body>

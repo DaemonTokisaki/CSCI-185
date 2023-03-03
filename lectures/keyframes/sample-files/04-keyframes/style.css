@@ -1,0 +1,229 @@
+body {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+#mountains {
+    position: absolute;
+    width: 100vw;
+    bottom: 0vh;
+    left: 0;
+    z-index: 100;
+}
+#sun {
+    position: absolute;
+    color: #FF3300;
+    bottom: -10vh;
+    left: calc(50vw - 50px); 
+    font-size: 200px;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards; 
+    animation-name: sunrise;
+    animation-delay: 1s;
+    animation-duration: 12s;
+    animation-direction: alternate-reverse;
+}
+
+#cloud1 {
+    position: absolute;
+    color: #17f0f0;
+    top: 0px;
+    left: 0px;
+    font-size: 240px;
+
+    
+    /* Start by positioning the cloud to the left by 30vw */
+    transform: translate(-30vw, 0);
+
+
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; 
+    animation-direction: alternate-reverse;
+    animation-name: moveCloudHorizontally;
+    animation-delay: 1s;
+    animation-duration: 18s;
+}
+#cloud2 {
+    position: absolute;
+    color: #f02525;
+    top: 0px;
+    left: 0px;
+    font-size: 400px;
+
+    
+    /* Start by positioning the cloud to the left by 30vw */
+    transform: translate(-30vw, -30vw);
+
+
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; 
+    animation-direction: alternate-reverse;
+    animation-name: moveCloudHorizontally;
+    animation-delay: 1s;
+    animation-duration: 9s;
+}
+#cloud3 {
+    position: absolute;
+    color: #5f8d65;
+    top: 10px;
+    left: 0px;
+    font-size: 100px;
+
+    
+    /* Start by positioning the cloud to the left by 30vw */
+    transform: translate(-30vw, -30vw);
+
+
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; 
+    animation-direction: alternate-reverse;
+    animation-name: moveCloudHorizontally;
+    animation-delay: 1s;
+    animation-duration: 12s;
+}
+#cloud4 {
+    position: absolute;
+    color: #4325f0;
+    top: 14px;
+    left: 0px;
+    font-size: 300px;
+
+    
+    /* Start by positioning the cloud to the left by 30vw */
+    transform: translate(-30vw, -30vw);
+
+
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; 
+    animation-direction: alternate-reverse;
+    animation-name: moveCloudHorizontally;
+    animation-delay: 1s;
+    animation-duration: 8s;
+}
+#cloud5 {
+    position: absolute;
+    color: #a01e7f;
+    top: 0px;
+    left: 0px;
+    font-size: 120px;
+
+    
+    /* Start by positioning the cloud to the left by 30vw */
+    transform: translate(-30vw, -30vw);
+
+
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; 
+    animation-direction: alternate-reverse;
+    animation-name: moveCloudHorizontally;
+    animation-delay: 1s;
+    animation-duration: 4s;
+}
+
+#cloud6 {
+    position: absolute;
+    color: #1ea03e;
+    top: 160px;
+    left: 0px;
+    font-size: 100px;
+
+    
+    /* Start by positioning the cloud to the left by 30vw */
+    transform: translate(-30vw, -30vw);
+
+
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; 
+    animation-direction: alternate-reverse;
+    animation-name: frog;
+    animation-delay: 1s;
+    animation-duration: 5s;
+    
+}
+#cloud7 {
+    position: absolute;
+    color: #f025d5;
+    top: 20px;
+    left: 0px;
+    font-size: 100px;
+
+    
+    /* Start by positioning the cloud to the left by 30vw */
+    transform: translate(-30vw, -30vw);
+
+
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; 
+    animation-direction: alternate-reverse;
+    animation-name: moveCloudHorizontally;
+    animation-delay: 1s;
+    animation-duration: 7s;
+}
+
+#cloud8 {
+    position: absolute;
+    color: #f025d5;
+    top: 13px;
+    left: 0px;
+    font-size: 100px;
+
+    
+    /* Start by positioning the cloud to the left by 30vw */
+    transform: translate(-30vw, -30vw);
+
+
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; 
+    animation-direction: alternate-reverse;
+    animation-name: frog;
+    animation-delay: 1s;
+    animation-duration: 7s;
+}
+@keyframes moveCloudHorizontally {
+    0% { 
+        transform: translate(-30vw, 0);
+    }
+    100% { 
+        transform: translate(110vw, 0); 
+    }
+}
+
+@keyframes frog {
+    0% { 
+        transform: translate(-30vw, 0);
+    }
+    100% { 
+        transform: translate(110vw, 0); 
+    }
+}
+
+@keyframes frog {
+    0% { 
+        transform: translate(-30vw, 0);
+    }
+    100% { 
+        transform: translate(110vw, 0); 
+    }
+}
+
+@keyframes sunrise {
+    0% { 
+        transform: translate(0, 0);
+        color: #FF3300;
+        font-size: 200px;
+    }
+    100% { 
+        transform: translate(0, -70vh); 
+        color: yellow;
+        font-size: 100px;
+    }
+}
+

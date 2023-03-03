@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+nav ul {
+    color: white;
+    text-decoration: none;
+    margin: 1px;
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    padding: 10px;
+
+}
+
+
+
+li {
+    padding: 10px;
+    color: white;
+}
+
+body {
+    background-color: darkgreen;
+}
+
+
+
+header {
+    /* display:grid; 
+    grid-template-columns: 10% 45% 45%;
+    grid-template-rows: 100% 45% 45%; */
+    /* display: grid;*/
+
+    background-color: rgb(160, 12, 12);
+
+    color: rgba(0, 0, 0, 0.781);
+    /* padding: 25px 13vw; */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+
+}
+
+/* #card1{
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+#card2{
+    grid-column-start: 2;
+    grid-column-end: 3;
+} */
+
+section {
+    padding: 50px;
+}
+
+#profile-pic {
+    /* border-radius: 1000; */
+    background: white;
+    /* padding: 50px 15vw 100px 15vw; */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    margin-left: 41%;
+
+}
+
+h1 {
+    /* grid-column-start: 2;
+    grid-column-end: 3; */
+
+    margin-left: 25%;
+    /* display: flex;
+    align-items: center;
+    justify-content: center;  */
+}
+
+/* Your CSS Code Here! */
+nav,
+h1,
+h2,
+h3 {
+    font-family: Bungee Inline;
+}
+
+
+
+
+/* #profile-pic {
+    size: 50px;
+} */
+#profile-pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1000px;
+
+}
+
+#projects {
+    display: grid;
+    grid-template-columns: 50%, 50%;
+    grid-template-rows: 50%, 50%;
+    background-color: lightgrey;
+}
+
+.project-holder {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 10%;
+    column-gap: 10%;
+}
+
+footer {
+
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-bottom: 20px; */
+    padding: 2%;
+}
+
+p {
+    font-family: 'Courier New';
+}
+
+/* .contact {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: repeat(4,auto);
+    column-gap: 10px;
+    row-gap: 10px;
+  } */
+
+
+.contact-details {
+    display: grid;
+    grid-template-columns: 60% 40%;
+
+    /* column-gap: 10px;
+    row-gap: 10px; */
+    background-color: blueviolet;
+}
+
+form {
+    background-color: brown;
+}
+
+/* #input{
+    color: #bb2121;
+} */
+
+#submit {
+    /* height: 100%;
+    width: 100px; */
+    background-color: teal;
+    color: white;
+
+}
+
+/* .card {
+    border-solid: 1px black;
+} */
+
+.row {
+    padding: 1%;
+}
+
+#text {
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 20px;
+}
+
+.row2 {
+    /* padding-top: 10%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row3 {
+    padding: 1%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+}
+
+.card img{
+    width: 100%;
+}
+
+#name,
+#email,
+#message {
+    background-color: lightgray;
+}
+
+#name,
+#email {
+    width: 100%;
+}
+
+/* #email {
+   display: flex;
+   justify-content: flex-end;
+   align-items: flex-end;
+} */
+@media only screen and (max-width: 800px) {
+    h1 {
+        font-size: smaller;
+        margin-left: 35%;
+    }
+
+    #projects {
+        /* display: grid;
+        grid-template-rows: 25% 25% 25% 25%; */
+        padding: 1%;
+    }
+
+    /* .card {
+
+
+        padding: 2px;
+        display: grid;
+        grid-template-rows: 2%;
+
+
+    } */
+
+    .card {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 1%;
+        column-gap: 1%;
+    }
+
+    .contact-details {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+    /* .contact-info {
+        display: flex;
+        justify-content: center;
+
+    } */
+
+    /* #project-holder {
+        display: grid;
+        grid-template-rows: 25% 25% 25% 25%;
+    }
+   */
+   .project-holder {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 1%;
+    column-gap: 1%;
+}
+
+h3+p {
+    padding-bottom: 100px;
+}
+i {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    padding-left: 100px;
+
+}
+
+
+}
+
+.row1 {
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+#message {
+    width: 98%;
+}
+
+.contact-info {
+    padding: 20px;
+}
+
+@media only screen and (min-width: 800px) {
+i {
+padding-left: 20%;
+padding-right: 50%;
+}
+}
+/* #contact-info {
+    text-decoration: none;
+    margin: 1px;
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    padding: 10%;
+
+
+} */
+/* .contact-info {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+} */

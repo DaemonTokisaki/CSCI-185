@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css');
+
+.message {
+    font-family: 'Bree Serif', Courier, monospaced;
+    font-size: 6em;
+    text-align: center;
+
+    /* animation properties */
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-name: bounceIn;
+    animation-direction: alternate-reverse;
+    /* animation-delay: 0s; */
+
+    /* shorthand syntax */
+    /* animation: [animation-name] [animation-duration] [animation-timing-function] [animation-delay]; */
+    /* animation:  bounceIn 2s ease-in-out; */
+}
+
+@keyframes bounceIn {
+    0% {
+      transform: scale(0.1);
+      opacity: 0;
+      color: rgb(56, 6, 6);
+    }
+    60% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      color: rgb(226, 43, 43);
+    }
+}
