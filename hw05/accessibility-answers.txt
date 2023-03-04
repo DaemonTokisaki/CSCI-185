@@ -1,15 +1,17 @@
 1. What corrections did you have to make?
 
-Your answers here.
+I added alternate names to the pictures for situation where the images could not be displayed
+I adjusted the color of the letters and background so that they complemented each other well and did not blend
+Identified the language of the webpage 
+Added Aria Labels to the Name,Message and Email sections
 
 1. Do you think your website is usable if you turn off the CSS? Why or why not?
 
-Your answers here.
+I do not think so as the CSS holds the rules for the webpage and while the accessibilty portion would kick in and put names to images I do not think it would be readable as all the words would not be spaced out.
 
 1. Is your site is tabbable? In other words, without the use of the mouse, are all the links and buttons accessible using the tab key?
 
-Your answers here.
-
+Yes it is, though it can only contact the About Me, Projects, Contact, Name, Email, Message, and the Send Message Buttons. 
 
 
 Reminder: don't forget to include a screenshot of your Wave report and link to it from your homepage!
