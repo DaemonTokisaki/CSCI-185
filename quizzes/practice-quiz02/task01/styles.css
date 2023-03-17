@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    height: 100vh;
+
+  
+}
+
+section {
+    border: solid 4px orangered;
+    width: 200px;
+    height: 75px;
+    margin-top: 20%;
+}
+
+
+/* row gap
+flex direction */
