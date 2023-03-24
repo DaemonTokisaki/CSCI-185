@@ -5,3 +5,26 @@
     margin-top: 10px;
     width: 400px;
 }
+body{
+    /* display:flex;
+    justify-content: center; */
+    padding-left: 42%;
+    padding-right: 42%;
+    
+    background-color: rgb(255, 38, 0);
+    /* display: grid;
+    grid-template-columns: 50% 50%; */
+}
+
+#answer{
+    width: 77.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* https://media.tenor.com/kMifh-8gLasAAAAC/bunny-pole-dance.gif */
+/* input{
+    padding:15%;
+} */
