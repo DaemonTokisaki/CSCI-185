@@ -66,19 +66,26 @@ function setup() {
     fill('darkblue')
     beginShape(TRIANGLE_FAN);
     vertex(600, 250);
-vertex(600, 300);
-vertex(650, 300);
-vertex(600, 250);
-vertex(550, 300);
-vertex(600, 350);
-endShape();
+    vertex(600, 300);
+    vertex(650, 300);
+    vertex(600, 250);
+    vertex(550, 300);
+    vertex(600, 350);
+    endShape();
 
-fill('darkblue')
+    fill('darkblue')
     beginShape(TRIANGLE_FAN);
-vertex(600, 350);
-vertex(600, 300);
-vertex(650, 300);
-endShape();
+    vertex(600, 350);
+    vertex(600, 300);
+    vertex(650, 300);
+    endShape();
+
+    fill('darkblue')
+    beginShape(TRIANGLE_FAN);
+    vertex(600, 350);
+    vertex(600, 300);
+    vertex(550, 300);
+    endShape();
     // add your drawing here:
     // https://p5js.org/reference/#/p5/point
     // point(110, 20);
@@ -101,3 +108,5 @@ endShape();
     // for debugging:
     drawGrid(canvasWidth, canvasHeight)
 }
+
+
