@@ -1,14 +1,15 @@
-let x = 100;
-let y = 200;
-let width = 50;
-let speed = 1;
-let s = 200;
-let t = 100;
+// let speed = 1;
+// let s = 200;
+// let t = 100;
+
 
 const canvasWidth = window.innerWidth;
 const canvasHeight = window.innerHeight; 
 
-async function setup() {
+
+  
+
+function setup() {
     createCanvas(canvasWidth, canvasHeight);
 }
 
@@ -17,129 +18,115 @@ async function setup() {
 // in an animation loop (which is part of how p5.js 
 // works).
 
+const platform = {
+    x: 200, 
+    y: 600, 
+    width: 500,
+    height: 100,
+    speed: 1,
+    color: 'darkRed'
+}
 
+const player = {
+    x: 100,
+    y: 200,
+    width: 50,
+    speed: 1,
+    color: 'blue'
+}
 
 
 function draw(){
     
     clear();
-    noFill();
-    y+=speed;
-    circle(x, y, width);
+    player.y += player.speed;
+    
+    // draw player:
+    fill(player.color);
+    circle(player.x, player.y, player.width);
 
-    fill('darkRed')
-    rect(200, 600, 500, 100);
+    // draw platform:
+    fill(platform.color)
+    rect(platform.x, platform.y, platform.width, platform.height);
 
     
 
-    // drawGrid(canvasWidth, canvasHeight);
+    const topPlayer = player.y - player.width / 2;
+    const bottomPlayer = player.y + player.width / 2;
+    const rightPlayer = player.x + player.width / 2;
+    const leftPlayer = player.x - player.width / 2;
 
-   
-    // if (ev.code ==='ArrowLeft') {
-    //     console.log(ev.code);
-    //     y=y-20;
-    // }
-    
- 
-//   if (true){x += speed;
-//     clear();
-//     noFill();
-//     circle(x, y, width);
-// drawGrid(canvasWidth, canvasHeight);
-//   }
-   
-   
-
-   
-if (y>=400){
-    clear();
-    fill('blue');
-    y+=.1;
-    circle(x, y, width);
-
-    fill('darkRed')
-    rect(200, 600, 500, 100);
-
-
-    // drawGrid(canvasWidth, canvasHeight);
-   
-}
-
-
-
-
-    if (y>=573 && x>=173){
-        fill('red')
-        circle(x,y,width);
-
-
-        fill('darkRed')
-        rect(200, 600, 500, 100);
-
-
-        noDraw();
+    const topPlatform = platform.y;
+    const bottomPlatform = platform.y + platform.height;
+    const leftPlatform = platform.x;
+    const rightPlatform = platform.x + platform.width;
+       
+    if (
+        bottomPlayer >= topPlatform && 
+        rightPlayer >= leftPlatform &&
+        leftPlayer <= rightPlatform &&
+        topPlayer <= bottomPlatform
+        ){
+        player.color = 'red';
+        player.speed = 0;
+    } else {
+        player.speed = 1;
+        player.color = 'blue';
     }
-
-    // if (y=t){
-    //     fill('red')
-    //     circle(x,y,width);
-    //     fill('darkRed')
-    //     rect(200, 600, 1500, 100);
-    //     noDraw();
-    // }
 
 }
 
 function moveController (ev) {
     console.log(ev.code);
     if (ev.code==='ArrowLeft') {
-        x=x-20;
+        player.x=player.x-20;
     }
+
 
     if (ev.code ==='ArrowRight') {
-        x=x+20;
+        player.x=player.x+20;
 
     }
 
+
     if (ev.code ==='BrowserForward') {
-        x=x+20;
-        y=y-20;
+        player.x=player.x+20;
+        player.y=player.y-20;
 
     }
 
     if (ev.code ==='BrowserBack') {
-        x=x-20;
-        y=y-20;
+        player.x=player.x-20;
+        player.y=player.y-20;
 
     }
 
 
     if (ev.code ==='ArrowUp') {
-        y=y-20;
+        player.y=player.y-20;
     }
 
     if (ev.code ==='ArrowDown') {
-        y=y+20;
+        player.y=player.y+20;
     }
     
     if (ev.code ==='Space') {
-        width=width+10;
+        player.width=player.width+10;
     }
     
     if (ev.code ==='KeyM') {
-        width=width-10;
+        player.width=player.width-10;
     }
     
     if (ev.code ==='KeyR') {
-        fillColor ='red';
+        player.color ='red';
     }
     if (ev.code ==='KeyY') {
-        fillColor ='yellow';
+        player.color ='yellow';
     }
     if (ev.code ==='KeyB') {
-        fillColor ='blue';
+        player.color ='blue';
     }
 }
 document.addEventListener('keydown', moveController);
-
 
