@@ -21,7 +21,7 @@ body {
 }
 
 p, a, li {
-    line-height: 1.5em;
+    line-height: 1em;
     font-size: 1.1em;
     /* font-family:'Rubik Glitch'; */
     font-family: 'Bungee Inline';
