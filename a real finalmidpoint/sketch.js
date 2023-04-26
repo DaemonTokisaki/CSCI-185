@@ -160,18 +160,37 @@ function draw() {
 
 
     //BACKGROUND
+
+
     fill('gray')
     rect(0, 0, canvasWidth, canvasHeight)
 
     fill(caveLava.top)
     rect(0, 0, canvasWidth, 50)
 
+    
+    
     fill(caveLava.bottom)
     rect(0, canvasHeight - 50, canvasWidth, 50)
 
 
+    if(player.color ==='purple'||player.color ==='yellow')
+    for(let i=0; i< 200;i++){
+        const x= randomInt(0,canvasWidth);
+        const y= randomInt(canvasHeight-55,canvasHeight);
+        const diameter = randomInt(5,10);
+        fill('red')
+        circle(x,y,diameter)
+    }
 
-
+    // if(player.color ==='red'||player.color ==="#E3242B")
+    // for(let i=0; i< 200;i++){
+    //     const x= randomInt(0,canvasWidth);
+    //     const y= randomInt(canvasHeight-55,canvasHeight);
+    //     const diameter = randomInt(5,10);
+    //     fill('red')
+    //     circle(x,y,diameter)
+    // }
 
 
 
@@ -566,6 +585,7 @@ function draw() {
 
         ) {
             gravity.x = canvasWidth;
+            gravity.y= randomInt(50, canvasHeight - 55),
             player.color = 'purple';
             player.width = player.width + 10;
             player.y += -player.speed;
@@ -640,7 +660,10 @@ function draw() {
         player.color = 'red';
         fill('purple');
         circle(canvasWidth / 2, canvasHeight / 2, 200)
-
+        fill(0);
+        textSize(80);
+        text('CONGRATULATIONS!', 200, 100);
+        text('PRESS SPACE TO PLAY AGAIN', 50, 600);
     }
     //FIX
     if (player.color === 'orange') {
@@ -674,13 +697,7 @@ function draw() {
 
     }
     // image(img, 0, canvasHeight-255);
-    for(let i=0; i< 200;i++){
-        const x= randomInt(0,canvasWidth);
-        const y= randomInt(canvasHeight-55,canvasHeight);
-        const diameter = randomInt(5,10);
-        fill('red')
-        circle(x,y,diameter)
-    }
+ 
 }
 
 
@@ -699,11 +716,17 @@ function moveController(ev) {
 
     }
     if (ev.code === 'BrowserBack') {
+        if (ev) {
+            ev.preventDefault();
+        }
         player.color = 'red';
 
     }
 
     if (ev.code === 'BrowserForward' && player.color === 'red') {
+        if (ev) {
+            ev.preventDefault();
+        }
         player.color = 'purple';
 
 
