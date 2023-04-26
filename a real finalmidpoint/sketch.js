@@ -9,6 +9,10 @@ let h = 800;
 let i = 900;
 let j = 1000;
 
+let img;
+function preload() {
+  img = loadImage('assets/alava.gif');
+}
 
 
 const canvasWidth = window.innerWidth;
@@ -29,6 +33,7 @@ function randomInt(min, max) {
 
 function setup() {
     createCanvas(canvasWidth, canvasHeight);
+   
 }
 
 
@@ -107,7 +112,7 @@ const gravityList = [
 const player = {
     x: canvasWidth / 2,
     y: 100,
-    width: 30,
+    width: 40,
     speed: 1,
     color: 'orange',
 }
@@ -164,8 +169,8 @@ function draw() {
     fill(caveLava.bottom)
     rect(0, canvasHeight - 50, canvasWidth, 50)
 
-   
-   
+
+
 
 
 
@@ -191,7 +196,7 @@ function draw() {
 
     //caveLava
 
-    
+
 
 
     //ORBS
@@ -236,26 +241,26 @@ function draw() {
         let darts = dartsList[i];
 
         fill('black')
-    circle(darts.x,darts.y,darts.width);
-    circle(darts.x+4,darts.y+5,darts.width/2);
-    circle(darts.x+10,darts.y+5,12);
-    beginShape(TRIANGLE_FAN);
-    vertex(darts.x, darts.y-5);
-    vertex(darts.x+5, darts.y-10);
-    vertex(darts.x+5, darts.y);
-    endShape();
-    beginShape(TRIANGLE_FAN);
-    vertex(darts.x+20, darts.y);
-    vertex(darts.x+25, darts.y-10);
-    vertex(darts.x+5, darts.y);
-    endShape();
-    beginShape(TRIANGLE_FAN);
-    vertex(darts.x+10, darts.y+12);
-    vertex(darts.x+25, darts.y+12);
-    vertex(darts.x+15, darts.y);
-    endShape();
-    fill('white')
-    circle(darts.x,darts.y-2,4)
+        circle(darts.x, darts.y, darts.width);
+        circle(darts.x + 4, darts.y + 5, darts.width / 2);
+        circle(darts.x + 10, darts.y + 5, 12);
+        beginShape(TRIANGLE_FAN);
+        vertex(darts.x, darts.y - 5);
+        vertex(darts.x + 5, darts.y - 10);
+        vertex(darts.x + 5, darts.y);
+        endShape();
+        beginShape(TRIANGLE_FAN);
+        vertex(darts.x + 20, darts.y);
+        vertex(darts.x + 25, darts.y - 10);
+        vertex(darts.x + 5, darts.y);
+        endShape();
+        beginShape(TRIANGLE_FAN);
+        vertex(darts.x + 10, darts.y + 12);
+        vertex(darts.x + 25, darts.y + 12);
+        vertex(darts.x + 15, darts.y);
+        endShape();
+        fill('white')
+        circle(darts.x, darts.y - 2, 4)
 
         if (player.color === 'purple' || player.color === 'yellow') {
             darts.x += darts.speed;
@@ -281,45 +286,45 @@ function draw() {
         let pills = pillsList[i];
         fill('red');
         circle(pills.x, pills.y, pills.width);
-        
-     fill('black')
-     rect(pills.x+12,pills.y,.1,10)
-     rect(pills.x+12,pills.y+10,10,.1)
-     rect(pills.x+12,pills.y-10,.1,10)
-     rect(pills.x+12,pills.y-10,10,.1)
- 
-     rect(pills.x+8,pills.y,.1,14)
-     rect(pills.x+8,pills.y+14,10,.1)
-     rect(pills.x+8,pills.y-14,.1,14)
-     rect(pills.x+8,pills.y-14,10,.1)
- 
-     rect(pills.x+4,pills.y,.1,14)
-     rect(pills.x+4,pills.y+14,-10,.1)
-     rect(pills.x+4,pills.y-14,.1,14)
-     rect(pills.x+4,pills.y-14,-10,.1)
- 
-     rect(pills.x,pills.y,.1,10)
-     rect(pills.x,pills.y+10,-10,.1)
-     rect(pills.x,pills.y-10,.1,10)
-     rect(pills.x,pills.y-10,-10,.1)
-    
-  fill('brown')
-     circle(pills.x,pills.y,10)
-     circle(pills.x+10,pills.y,15)
- 
-     fill('red')
-     beginShape(TRIANGLE_FAN);
-     vertex(pills.x+10, pills.y);
-     vertex(pills.x+5, pills.y+5);
-     vertex(pills.x+5, pills.y-5);
-     endShape();
-     fill('red')
-     beginShape(TRIANGLE_FAN);
-     vertex(pills.x+10, pills.y);
-     vertex(pills.x+15, pills.y+5);
-     vertex(pills.x+15, pills.y-5);
-     endShape();
-   
+
+        fill('black')
+        rect(pills.x + 12, pills.y, .1, 10)
+        rect(pills.x + 12, pills.y + 10, 10, .1)
+        rect(pills.x + 12, pills.y - 10, .1, 10)
+        rect(pills.x + 12, pills.y - 10, 10, .1)
+
+        rect(pills.x + 8, pills.y, .1, 14)
+        rect(pills.x + 8, pills.y + 14, 10, .1)
+        rect(pills.x + 8, pills.y - 14, .1, 14)
+        rect(pills.x + 8, pills.y - 14, 10, .1)
+
+        rect(pills.x + 4, pills.y, .1, 14)
+        rect(pills.x + 4, pills.y + 14, -10, .1)
+        rect(pills.x + 4, pills.y - 14, .1, 14)
+        rect(pills.x + 4, pills.y - 14, -10, .1)
+
+        rect(pills.x, pills.y, .1, 10)
+        rect(pills.x, pills.y + 10, -10, .1)
+        rect(pills.x, pills.y - 10, .1, 10)
+        rect(pills.x, pills.y - 10, -10, .1)
+
+        fill('brown')
+        circle(pills.x, pills.y, 10)
+        circle(pills.x + 10, pills.y, 15)
+
+        fill('red')
+        beginShape(TRIANGLE_FAN);
+        vertex(pills.x + 10, pills.y);
+        vertex(pills.x + 5, pills.y + 5);
+        vertex(pills.x + 5, pills.y - 5);
+        endShape();
+        fill('red')
+        beginShape(TRIANGLE_FAN);
+        vertex(pills.x + 10, pills.y);
+        vertex(pills.x + 15, pills.y + 5);
+        vertex(pills.x + 15, pills.y - 5);
+        endShape();
+
 
         if (player.color === 'purple' || player.color === 'yellow') {
             pills.x += pills.speed;
@@ -342,51 +347,51 @@ function draw() {
     // Gravity
     for (let i = 0; i < gravityList.length; i++) {
         let gravity = gravityList[i];
-       
+
         fill("#FFCBCB")
-    
+
         circle(gravity.x, gravity.y, gravity.width);
 
         fill('red')
-        circle(gravity.x-8,gravity.y,12)
+        circle(gravity.x - 8, gravity.y, 12)
         fill('black')
-        circle(gravity.x-9,gravity.y,6)
-       
+        circle(gravity.x - 9, gravity.y, 6)
+
         fill('darkred')
-            beginShape();
-            vertex(gravity.x+2, gravity.y-16);
-            vertex(gravity.x+15, gravity.y-10);
-            vertex(gravity.x+45, gravity.y-5);
-            vertex(gravity.x+15, gravity.y+10);
-            vertex(gravity.x+2 , gravity.y+16);
-            endShape()
-        
-        line(gravity.x,gravity.y-14,gravity.x+40,gravity.y-5)
-       
-       
-        line(gravity.x-5,gravity.y+10,gravity.x+30,gravity.y-10)
-    
-        line(gravity.x+10,gravity.y+10,gravity.x+5,gravity.y-14)
-       
-        line(gravity.x+10,gravity.y-10,gravity.x+5,gravity.y+14)
-    
-        line(gravity.x,gravity.y+14,gravity.x+35,gravity.y)
-    
-        line(gravity.x,gravity.y+14,gravity.x+35,gravity.y-15)
-        
-        line(gravity.x,gravity.y-10,gravity.x+35,gravity.y-2)
-        
-        line(gravity.x,gravity.y+10,gravity.x+40,gravity.y-5)
-        
-        line(gravity.x-5,gravity.y-10,gravity.x+40,gravity.y+2)
-        
-        line(gravity.x+5,gravity.y+10,gravity.x+40,gravity.y-10)
-        
-        line(gravity.x,gravity.y-5,gravity.x+40,gravity.y+8)
-       
-        line(gravity.x+10,gravity.y,gravity.x,gravity.y-8)
-      
-    
+        beginShape();
+        vertex(gravity.x + 2, gravity.y - 16);
+        vertex(gravity.x + 15, gravity.y - 10);
+        vertex(gravity.x + 45, gravity.y - 5);
+        vertex(gravity.x + 15, gravity.y + 10);
+        vertex(gravity.x + 2, gravity.y + 16);
+        endShape()
+
+        line(gravity.x, gravity.y - 14, gravity.x + 40, gravity.y - 5)
+
+
+        line(gravity.x - 5, gravity.y + 10, gravity.x + 30, gravity.y - 10)
+
+        line(gravity.x + 10, gravity.y + 10, gravity.x + 5, gravity.y - 14)
+
+        line(gravity.x + 10, gravity.y - 10, gravity.x + 5, gravity.y + 14)
+
+        line(gravity.x, gravity.y + 14, gravity.x + 35, gravity.y)
+
+        line(gravity.x, gravity.y + 14, gravity.x + 35, gravity.y - 15)
+
+        line(gravity.x, gravity.y - 10, gravity.x + 35, gravity.y - 2)
+
+        line(gravity.x, gravity.y + 10, gravity.x + 40, gravity.y - 5)
+
+        line(gravity.x - 5, gravity.y - 10, gravity.x + 40, gravity.y + 2)
+
+        line(gravity.x + 5, gravity.y + 10, gravity.x + 40, gravity.y - 10)
+
+        line(gravity.x, gravity.y - 5, gravity.x + 40, gravity.y + 8)
+
+        line(gravity.x + 10, gravity.y, gravity.x, gravity.y - 8)
+
+
 
 
         if (player.color === 'purple' || player.color === 'yellow') {
@@ -411,7 +416,8 @@ function draw() {
     if (player.x < -10) {
         player.x = canvasWidth / 2;
         player.y = canvasHeight / 2;
-        player.width = 30;
+        player.width = 40;
+        player.color = 'purple'
     }
 
     // draw platform:
@@ -461,7 +467,7 @@ function draw() {
             orbs.speed = orbs.speed;
             player.y = canvasHeight / 2;
             player.x = canvasWidth / 2;
-            player.width = 30;
+            player.width = 40;
             player.color = 'purple';
         }
         //     if (zo>=4){
@@ -533,6 +539,7 @@ function draw() {
 
         ) {
             pills.x = canvasWidth;
+            pills.y = randomInt(50, canvasHeight - 55)
             player.width = player.width + 10;
             return;
         }
@@ -635,12 +642,45 @@ function draw() {
         circle(canvasWidth / 2, canvasHeight / 2, 200)
 
     }
-//FIX
+    //FIX
     if (player.color === 'orange') {
         fill('orange');
         rect(0, 0, canvasWidth, canvasHeight);
-    }
 
+
+        //ADD TEXT HERE
+        fill(0);
+        textSize(32);
+        text('word', 300, 300);
+
+
+
+
+        // fill('blue')
+        // rect(0,0,canvasWidth,100)
+        // frameRate(10);
+        // fill("darkorange");
+        // let x = randomInt(0, canvasWidth);
+        // let y = randomInt(0, 55);
+        // let diameter = randomFloat(5, 25);
+        // circle(x, y, diameter);
+
+
+        // circle(x+200, y, diameter);
+        // circle(x+400, y, diameter);
+        // circle(x+290, y, diameter);
+        // circle(x+750, y, diameter);
+        // circle(x+600, y, diameter);
+
+    }
+    // image(img, 0, canvasHeight-255);
+    for(let i=0; i< 200;i++){
+        const x= randomInt(0,canvasWidth);
+        const y= randomInt(canvasHeight-55,canvasHeight);
+        const diameter = randomInt(5,10);
+        fill('red')
+        circle(x,y,diameter)
+    }
 }
 
 
@@ -653,7 +693,7 @@ function moveController(ev) {
 
         player.x = canvasWidth / 2;
         player.y = 100;
-        player.width = 30;
+        player.width = 40;
         player.color = "#E3242B";
 
 
@@ -674,7 +714,7 @@ function moveController(ev) {
 
 
     }
-
+    //REMOVE
     if (ev.code === 'ArrowRight' && player.color === 'purple') {
         player.x = player.x + a;
     }
