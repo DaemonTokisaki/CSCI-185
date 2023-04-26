@@ -23,17 +23,27 @@ function randomInt(min, max) {
  *       triangles, etc.). Scroll down to the bottom for sample code.
  * */
 
-function setup() {
+function draw() {
     createCanvas(canvasWidth, canvasHeight);
-    // frameRate(2);
-    
-    fill("#08415c");
 
-    // this code draws a random circle:
+
+
+    fill('blue')
+    rect(0,0,canvasWidth,100)
+    frameRate(10);
+    fill("darkorange");
     let x = randomInt(0, canvasWidth);
-    let y = randomInt(0, canvasHeight);
-    let diameter = randomFloat(25, 125);
+    let y = randomInt(0, 55);
+    let diameter = randomFloat(5, 25);
     circle(x, y, diameter);
+
+
+    circle(x+200, y, diameter);
+    circle(x+400, y, diameter);
+    circle(x+290, y, diameter);
+    circle(x+750, y, diameter);
+    circle(x+600, y, diameter);
+
     
 }
 

@@ -39,10 +39,13 @@ const orbsList = [
         x: canvasWidth + 10000,
         y: randomInt(50, canvasHeight - 55),
         width: 10,
-        speed: -15,
-        color: 'red'
+        speed: -8,
+        color: 'hotpink'
     }
 ]
+
+
+
 
 const dartsList = [
     {
@@ -50,21 +53,21 @@ const dartsList = [
         x: canvasWidth + 100,
         y: randomInt(50, canvasHeight - 55),
         width: 10,
-        speed: randomInt(-12, -6),
+        speed: randomInt(-10, -6),
         color: 'green',
     }, {
         // x: randomInt(canvasWidth, canvasWidth + 5000),
         x: canvasWidth + 300,
         y: randomInt(50, canvasHeight - 55),
         width: 10,
-        speed: randomInt(-12, -6),
+        speed: randomInt(-10, -6),
         color: 'green',
     }, {
         // x: randomInt(canvasWidth, canvasWidth + 5000),
         x: canvasWidth + 200,
         y: randomInt(50, canvasHeight - 55),
         width: 10,
-        speed: randomInt(-12, -6),
+        speed: randomInt(-10, -6),
         color: 'green',
     }
 ]
@@ -76,16 +79,18 @@ const pillsList = [
         x: canvasWidth + 2000,
         y: randomInt(50, canvasHeight - 55),
         width: 10,
-        speed: randomInt(-4, -3),
+        speed: randomInt(-6, -3),
         color: 'blue'
     }, {
         // x: randomInt(canvasWidth, canvasWidth + 300),
-        x: canvasWidth + 2200,
+        x: canvasWidth + 2300,
         y: randomInt(50, canvasHeight - 55),
         width: 10,
-        speed: -5,
+        speed: randomInt(-6, -3),
         color: 'blue'
     },
+
+
 ]
 
 const gravityList = [
@@ -93,8 +98,8 @@ const gravityList = [
         // x: randomInt(canvasWidth, canvasWidth + 300),
         x: canvasWidth + 4000,
         y: randomInt(50, canvasHeight - 55),
-        width: 10,
-        speed: -4,
+        width: 30,
+        speed: randomInt(-5, -3),
         color: 'yellow'
     },
 ]
@@ -102,9 +107,9 @@ const gravityList = [
 const player = {
     x: canvasWidth / 2,
     y: 100,
-    width: 50,
+    width: 30,
     speed: 1,
-    color: 'purple',
+    color: 'orange',
 }
 
 const caveLava = {
@@ -115,6 +120,7 @@ const caveLava = {
     top: 'black',
     bottom: 'crimson'
 }
+
 
 
 const platformList = [
@@ -158,19 +164,18 @@ function draw() {
     fill(caveLava.bottom)
     rect(0, canvasHeight - 50, canvasWidth, 50)
 
+   
+   
 
-    //SPEED
-    // player.y += player.speed;
-    caveLava.x += caveLava.speed;
-    platformList.x += platformList.speed;
+
+
+
 
     if (player.color === 'purple') {
         player.y += player.speed;
     }
 
-    if (player.color === 'red') {
-        player.y += player.speed;
-    }
+
 
     if (player.color === 'yellow') {
         player.y += -player.speed;
@@ -184,98 +189,230 @@ function draw() {
     circle(player.x, player.y, player.width);
 
 
+    //caveLava
+
+    
+
+
     //ORBS
     for (let i = 0; i < orbsList.length; i++) {
         let orbs = orbsList[i];
-        fill(orbs.color);
-        circle(orbs.x, orbs.y, orbs.width);
+        fill('white')
+        beginShape(TRIANGLE_FAN);
+        vertex(orbs.x, orbs.y);
+        vertex(orbs.x + 20, orbs.y - 5);
+        vertex(orbs.x + 20, orbs.y + 5);
+        endShape()
+        fill('brown')
+        rect(orbs.x - 34, orbs.y - 2, 40, 4)
+        fill('gray')
+        beginShape(TRIANGLE_FAN);
+        vertex(orbs.x - 30, orbs.y - 5);
+        vertex(orbs.x - 40, orbs.y);
+        vertex(orbs.x - 30, orbs.y + 5);
+        endShape()
 
 
 
-        orbs.x += orbs.speed
+        if (player.color === 'purple' || player.color === 'yellow') {
+            orbs.x += orbs.speed;
+
+        }
+        if (player.color === "#E3242B") {
+            orbs.x = canvasWidth + 10000;
+            orbs.y = randomInt(50, canvasHeight - 55);
+        }
         if (orbs.x < -10) {
             orbs.x = canvasWidth + 10;
             orbs.y = randomInt(55, canvasHeight - 55);
-            orbs.speed = -20;
-            player.x = player.x + 2;
+            orbs.speed = -10;
+            player.x = player.x + 4;
         }
+
     }
 
     //DARTS
     for (let i = 0; i < dartsList.length; i++) {
         let darts = dartsList[i];
-        fill(darts.color);
-        circle(darts.x, darts.y, darts.width);
 
+        fill('black')
+    circle(darts.x,darts.y,darts.width);
+    circle(darts.x+4,darts.y+5,darts.width/2);
+    circle(darts.x+10,darts.y+5,12);
+    beginShape(TRIANGLE_FAN);
+    vertex(darts.x, darts.y-5);
+    vertex(darts.x+5, darts.y-10);
+    vertex(darts.x+5, darts.y);
+    endShape();
+    beginShape(TRIANGLE_FAN);
+    vertex(darts.x+20, darts.y);
+    vertex(darts.x+25, darts.y-10);
+    vertex(darts.x+5, darts.y);
+    endShape();
+    beginShape(TRIANGLE_FAN);
+    vertex(darts.x+10, darts.y+12);
+    vertex(darts.x+25, darts.y+12);
+    vertex(darts.x+15, darts.y);
+    endShape();
+    fill('white')
+    circle(darts.x,darts.y-2,4)
 
+        if (player.color === 'purple' || player.color === 'yellow') {
+            darts.x += darts.speed;
+        }
+        if (player.color === "#E3242B") {
+            darts.x = canvasWidth + 100;
+            darts.y = randomInt(50, canvasHeight - 55);
+        }
 
-        darts.x += darts.speed
+        // darts.x += darts.speed
         if (darts.x < -10) {
             darts.x = canvasWidth + 10;
             darts.y = randomInt(55, canvasHeight - 55);
-            darts.speed = randomInt(-15, -6);
-            player.x = player.x + 2;
+            darts.speed = randomInt(-10, -6);
+            player.x = player.x + 4;
         }
+
+
     }
 
     //Pills
     for (let i = 0; i < pillsList.length; i++) {
         let pills = pillsList[i];
-        fill(pills.color)
+        fill('red');
         circle(pills.x, pills.y, pills.width);
-        pills.x += pills.speed
+        
+     fill('black')
+     rect(pills.x+12,pills.y,.1,10)
+     rect(pills.x+12,pills.y+10,10,.1)
+     rect(pills.x+12,pills.y-10,.1,10)
+     rect(pills.x+12,pills.y-10,10,.1)
+ 
+     rect(pills.x+8,pills.y,.1,14)
+     rect(pills.x+8,pills.y+14,10,.1)
+     rect(pills.x+8,pills.y-14,.1,14)
+     rect(pills.x+8,pills.y-14,10,.1)
+ 
+     rect(pills.x+4,pills.y,.1,14)
+     rect(pills.x+4,pills.y+14,-10,.1)
+     rect(pills.x+4,pills.y-14,.1,14)
+     rect(pills.x+4,pills.y-14,-10,.1)
+ 
+     rect(pills.x,pills.y,.1,10)
+     rect(pills.x,pills.y+10,-10,.1)
+     rect(pills.x,pills.y-10,.1,10)
+     rect(pills.x,pills.y-10,-10,.1)
+    
+  fill('brown')
+     circle(pills.x,pills.y,10)
+     circle(pills.x+10,pills.y,15)
+ 
+     fill('red')
+     beginShape(TRIANGLE_FAN);
+     vertex(pills.x+10, pills.y);
+     vertex(pills.x+5, pills.y+5);
+     vertex(pills.x+5, pills.y-5);
+     endShape();
+     fill('red')
+     beginShape(TRIANGLE_FAN);
+     vertex(pills.x+10, pills.y);
+     vertex(pills.x+15, pills.y+5);
+     vertex(pills.x+15, pills.y-5);
+     endShape();
+   
+
+        if (player.color === 'purple' || player.color === 'yellow') {
+            pills.x += pills.speed;
+
+        }
+
+        if (player.color === "#E3242B") {
+            pills.x = canvasWidth + 2000;
+            pills.y = randomInt(50, canvasHeight - 55);
+        }
         if (pills.x < -10) {
             pills.x = canvasWidth + 10;
             pills.y = randomInt(55, canvasHeight - 55);
             pills.speed = randomInt(-6, -4);
-            player.x = player.x + 2;
+            player.x = player.x + 4;
         }
+
     }
 
     // Gravity
     for (let i = 0; i < gravityList.length; i++) {
         let gravity = gravityList[i];
-        fill(gravity.color)
+       
+        fill("#FFCBCB")
+    
         circle(gravity.x, gravity.y, gravity.width);
-        gravity.x += gravity.speed
+
+        fill('red')
+        circle(gravity.x-8,gravity.y,12)
+        fill('black')
+        circle(gravity.x-9,gravity.y,6)
+       
+        fill('darkred')
+            beginShape();
+            vertex(gravity.x+2, gravity.y-16);
+            vertex(gravity.x+15, gravity.y-10);
+            vertex(gravity.x+45, gravity.y-5);
+            vertex(gravity.x+15, gravity.y+10);
+            vertex(gravity.x+2 , gravity.y+16);
+            endShape()
+        
+        line(gravity.x,gravity.y-14,gravity.x+40,gravity.y-5)
+       
+       
+        line(gravity.x-5,gravity.y+10,gravity.x+30,gravity.y-10)
+    
+        line(gravity.x+10,gravity.y+10,gravity.x+5,gravity.y-14)
+       
+        line(gravity.x+10,gravity.y-10,gravity.x+5,gravity.y+14)
+    
+        line(gravity.x,gravity.y+14,gravity.x+35,gravity.y)
+    
+        line(gravity.x,gravity.y+14,gravity.x+35,gravity.y-15)
+        
+        line(gravity.x,gravity.y-10,gravity.x+35,gravity.y-2)
+        
+        line(gravity.x,gravity.y+10,gravity.x+40,gravity.y-5)
+        
+        line(gravity.x-5,gravity.y-10,gravity.x+40,gravity.y+2)
+        
+        line(gravity.x+5,gravity.y+10,gravity.x+40,gravity.y-10)
+        
+        line(gravity.x,gravity.y-5,gravity.x+40,gravity.y+8)
+       
+        line(gravity.x+10,gravity.y,gravity.x,gravity.y-8)
+      
+    
+
+
+        if (player.color === 'purple' || player.color === 'yellow') {
+            gravity.x += gravity.speed
+
+        }
+        if (player.color === "#E3242B") {
+            gravity.x = canvasWidth + 4000;
+            gravity.y = randomInt(50, canvasHeight - 55);
+        }
+
         if (gravity.x < -10) {
             gravity.x = canvasWidth + 10;
             gravity.y = randomInt(55, canvasHeight - 55);
             gravity.speed = randomInt(-6, -4);
-            player.x = player.x + 2;
+            player.x = player.x + 4;
         }
+
+
     }
 
-
-
-    // orbs
-    // if (orbs.x < -300) {
-    //     orbs.x = canvasWidth + 300;
-    //     orbs.y = randomInt(55, canvasHeight - 55)
-    //     player.x = player.x + 2;
-    // }
-
-    // if (darts.x < -10) {
-    //     darts.x = canvasWidth + 10;
-    //     darts.y = randomInt(55, canvasHeight - 55)
-    //     player.x = player.x + 5;
-    // }
-
-    // if (pills.x < -10) {
-    //     pills.x = canvasWidth + 10;
-    //     pills.y = randomInt(55, canvasHeight - 55)
-    //     player.x = player.x + 1;
-    // }
     if (player.x < -10) {
         player.x = canvasWidth / 2;
         player.y = canvasHeight / 2;
-        player.color = 'purple';
+        player.width = 30;
     }
-
-
-    // if (player.color === 'red') {
-    //     var a = 1;
-    // }
 
     // draw platform:
     //1. Loop through each platform and draw it
@@ -288,15 +425,6 @@ function draw() {
 
 
 
-    // fill(platform.color)
-    // rect(platform.x+100, platform.y-300, platform.width, platform.height);
-
-
-    // fill(platform.color)
-    // rect(platform.x=platform.x+100, platform.y=platform.y-100, platform.width, platform.height);
-
-    // fill(platform.color)
-    // rect(platform.x=platform.x+1, platform.y=platform.y-1, platform.width, platform.height);
 
 
     const topPlayer = player.y - player.width / 2;
@@ -304,20 +432,7 @@ function draw() {
     const rightPlayer = player.x + player.width / 2;
     const leftPlayer = player.x - player.width / 2;
 
-    // const topOrb = orbs.y - orbs.width / 2;
-    // const bottomOrb = orbs.y + orbs.width / 2;
-    // const rightOrb = orbs.x + orbs.width / 2;
-    // const leftOrb = orbs.x - orbs.width / 2;
 
-    // const topDart = darts.y - darts.width / 2;
-    // const bottomDart = darts.y + darts.width / 2;
-    // const rightDart = darts.x + darts.width / 2;
-    // const leftDart = darts.x - darts.width / 2;
-
-    // const topPill = pills.y - pills.width / 2;
-    // const bottomPill = pills.y + pills.width / 2;
-    // const rightPill = pills.x + pills.width / 2;
-    // const leftPill = pills.x - pills.width / 2;
 
     // HOW TO LOSE A LIFE
     for (let i = 0; i < orbsList.length; i++) {
@@ -327,6 +442,10 @@ function draw() {
         const bottomOrb = orbs.y + orbs.width / 2;
         const rightOrb = orbs.x + orbs.width / 2;
         const leftOrb = orbs.x - orbs.width / 2;
+
+
+        // for (let zo = 0;zo < 4; zo++) {
+        ;
 
         if (
             bottomPlayer >= topOrb &&
@@ -342,8 +461,34 @@ function draw() {
             orbs.speed = orbs.speed;
             player.y = canvasHeight / 2;
             player.x = canvasWidth / 2;
+            player.width = 30;
             player.color = 'purple';
         }
+        //     if (zo>=4){
+        //        player.color='black';
+        //     }
+        // }
+
+
+
+
+        // if (
+        //     bottomPlayer >= topOrb &&
+        //     rightPlayer >= leftOrb &&
+        //     leftPlayer <= rightOrb &&
+        //     topPlayer <= bottomOrb
+        //     ||
+        //     bottomPlayer >= canvasHeight - 55
+        //     ||
+        //     topPlayer <= 55
+        // ) {
+
+        //     orbs.speed = orbs.speed;
+        //     player.y = canvasHeight / 2;
+        //     player.x = canvasWidth / 2;
+        //     player.width=50;
+        //     player.color='purple';
+        // }
 
     }
 
@@ -393,7 +538,6 @@ function draw() {
         }
         else {
             player.speed = 1;
-            // player.color = 'blue';
         }
     }
 
@@ -422,7 +566,6 @@ function draw() {
         }
         else {
             player.speed = 1;
-            // player.color = 'blue';
         }
 
         if (
@@ -439,13 +582,12 @@ function draw() {
             player.y += -player.speed;
             return;
         }
-        
+
         else {
             player.speed = 1;
-            // player.color = 'blue';
         }
 
-       
+
     }
 
 
@@ -475,7 +617,6 @@ function draw() {
             return;
         } else {
             player.speed = 1;
-            // player.color = 'purple';
         }
 
 
@@ -486,94 +627,64 @@ function draw() {
 
 
 
-
-    // if (
-    //     bottomPlayer >= topOrb && 
-    //     rightPlayer >= leftOrb &&
-    //     leftPlayer <= rightOrb &&
-    //     topPlayer <= bottomOrb
-    //     ){
-    //     orbs.color = 'red';
-    //     player.color = 'red';
-    //     player.speed = 0;
-    //     orbs.speed = 0;
-    // } else {
-    //     player.speed = 1;
-    //     player.color = 'blue';
-    // }
     if (player.x >= canvasWidth - 100) {
-        fill('black')
-        rect(0, 0, canvasWidth, canvasHeight)
-        player.speed = 0;
-        orbsList.speed = 0;
-        dartsList.speed = 0;
-        pillsList.speed = 0;
-        gravityList.speed = 0;
-    }
+        fill('gold');
+        rect(0, 0, canvasWidth, canvasHeight);
+        player.color = 'red';
+        fill('purple');
+        circle(canvasWidth / 2, canvasHeight / 2, 200)
 
-    
+    }
+//FIX
+    if (player.color === 'orange') {
+        fill('orange');
+        rect(0, 0, canvasWidth, canvasHeight);
+    }
 
 }
 
 
 
-// function drawOrb(x, y, size, fillColor) {
-
-//     fill(fillColor);
-//     circle(x + size, y, size);
-// }
-
-// function drawDart(x, y, size, fillColor) {
-
-//     fill(fillColor);
-//     circle(x + size, y, size);
-// }
-
-
-// function drawPill(x, y, size, fillColor) {
-
-//     fill(fillColor);
-//     circle(x + size, y, size);
-// }
-
-
 function moveController(ev) {
     console.log(ev.code);
 
-    // if (ev.code==='ArrowLeft' && player.color === 'purple') {
-    //     player.x=player.x-a;
-    // }
+    if (ev.code === 'Space') {
 
 
-    // if (ev.code ==='ArrowRight' && player.color === 'purple') {
-    //     player.x=player.x+a;
+        player.x = canvasWidth / 2;
+        player.y = 100;
+        player.width = 30;
+        player.color = "#E3242B";
 
-    // }
-    if (ev.code ==='Space' ) {
-        // player.x=player.x+a;
-        player.color='red';
-    
+
+    }
+    if (ev.code === 'BrowserBack') {
+        player.color = 'red';
+
     }
 
-    // if (ev.code ==='BrowserForward' && player.color === 'blue' ) {
-    //     player.x=player.x+a;
-    //     player.y=player.y-a;
+    if (ev.code === 'BrowserForward' && player.color === 'red') {
+        player.color = 'purple';
 
-    // }
 
-    // if (ev.code ==='BrowserBack' && player.color === 'blue') {
-    //     player.x=player.x-a;
-    //     player.y=player.y-a;
+    }
 
-    // }
+    if (ev.code === 'BrowserForward' && player.color === "#E3242B") {
+        player.color = 'purple';
 
+
+    }
+
+    if (ev.code === 'ArrowRight' && player.color === 'purple') {
+        player.x = player.x + a;
+    }
 
     if (ev.code === 'ArrowUp' && player.color === 'purple') {
         player.y = player.y - a;
     }
 
     if (ev.code === 'ArrowUp' && player.color === 'red') {
-        player.y = player.y - a;
+
     }
 
     if (ev.code === 'ArrowUp' && player.color === 'yellow') {
@@ -589,21 +700,6 @@ function moveController(ev) {
         player.y = player.y - a;
     }
 
-    if (ev.code === 'Space') {
-        player.speed = 0;
-        orbsList.speed = 0;
-        dartsList.speed = 0;
-        pillsList.speed = 0;
-        gravityList.speed = 0;
-    }
-
-    // if (ev.code ==='Space') {
-    //     player.width=player.width+10;
-    // }
-
-    // if (ev.code ==='KeyM') {
-    //     player.width=player.width-10;
-    // }
 
 }
 document.addEventListener('keydown', moveController);
