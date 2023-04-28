@@ -9,11 +9,6 @@ let h = 800;
 let i = 900;
 let j = 1000;
 
-let img;
-function preload() {
-  img = loadImage('assets/alava.gif');
-}
-
 
 const canvasWidth = window.innerWidth;
 const canvasHeight = window.innerHeight;
